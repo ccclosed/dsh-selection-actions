@@ -1,5 +1,8 @@
 # dsh-selection-actions
 
+[![npm](https://img.shields.io/npm/v/dsh-selection-actions.svg)](https://www.npmjs.com/package/dsh-selection-actions)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web GUI plugin: select any fragment of a
 conversation and turn it into a citation in the message you are about to send — or open it in a parallel chat.
 
@@ -23,6 +26,9 @@ The plugin is a bundle: the Host half is empty, everything lives in the Web clie
 harness plugin manager, from this checkout or straight from GitHub:
 
 ```
+# from npm
+dsh plugin --profile <profile> add dsh-selection-actions
+
 # from a local checkout
 dsh plugin --profile <profile> add /path/to/dsh-selection-actions
 

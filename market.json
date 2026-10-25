@@ -44,11 +44,9 @@
       "versions": [
         {
           "version": "0.1.0",
-          "publishTimestamp": 1792956438,
+          "publishTimestamp": 1792957390,
           "source": {
-            "type": "git",
-            "url": "https://github.com/ccclosed/dsh-selection-actions",
-            "commit": "1b9e99455a07ee4e32d54833a1639058e5a81615"
+            "type": "npm"
           },
           "engines": {}
         }
