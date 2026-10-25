@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Selection Actions",
+    "ru": "Действия с выделением"
+  },
+  "description": {
+    "en": "A DSH Web GUI plugin that turns a selected conversation fragment into a citation in the current message, or opens it in a parallel side chat.",
+    "ru": "Плагин DSH: выделенный фрагмент переписки становится цитатой в текущем сообщении или открывается в параллельном чате."
+  },
+  "metadata": {
+    "categories": {},
+    "labels": {},
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "dsh-selection-actions",
+      "title": {
+        "en": "Selection Actions",
+        "ru": "Действия с выделением"
+      },
+      "description": {
+        "en": "Cite a selected conversation fragment in the current message, or open it in a parallel side chat.",
+        "ru": "Цитирование выделенного фрагмента переписки в сообщении или в параллельном чате."
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3QgeD0iNSIgeT0iMTIiIHdpZHRoPSI0MCIgaGVpZ2h0PSIyOSIgcng9IjciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzI0N2JiZiIgc3Ryb2tlLXdpZHRoPSIzLjUiLz4KICA8cGF0aCBkPSJNMTQgNDEgTDE0IDUwIEwyNSA0MSBaIiBmaWxsPSIjMjQ3YmJmIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjIxIiB3aWR0aD0iMjIiIGhlaWdodD0iMy42IiByeD0iMS44IiBmaWxsPSIjNmZhOGQ2Ii8+CiAgPHJlY3QgeD0iMTIiIHk9IjI5IiB3aWR0aD0iMTQiIGhlaWdodD0iMy42IiByeD0iMS44IiBmaWxsPSIjNmZhOGQ2Ii8+CiAgPGNpcmNsZSBjeD0iNDgiIGN5PSI0NCIgcj0iMTIuNSIgZmlsbD0iIzI0N2JiZiIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cGF0aCBkPSJNNDggMzguNSBWNDkuNSBNNDIuNSA0NCBINTMuNSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==",
+      "author": "ccclosed",
+      "homepage": "https://github.com/ccclosed/dsh-selection-actions",
+      "repository": {
+        "url": "https://github.com/ccclosed/dsh-selection-actions"
+      },
+      "metadata": {
+        "keywords": [
+          "dsh",
+          "dsh-plugin",
+          "citation",
+          "quote",
+          "selection"
+        ],
+        "labels": [],
+        "sortKeys": {}
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1792956438,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/ccclosed/dsh-selection-actions",
+            "commit": "1b9e99455a07ee4e32d54833a1639058e5a81615"
+          },
+          "engines": {}
+        }
+      ]
+    }
+  ]
+}

@@ -32,6 +32,18 @@ dsh plugin --profile <profile> add https://github.com/ccclosed/dsh-selection-act
 
 Then reload the Web GUI page. It is a per-profile installation and survives restarts.
 
+### Install from the plugin market (no npm account, one URL)
+
+The repository ships a [format-1 market index](market.json), so the plugin installs from a pinned commit
+without npm. Add this URL under **Settings → Plugins → Discover → index sources**:
+
+```
+https://raw.githubusercontent.com/ccclosed/dsh-selection-actions/main/market.json
+```
+
+The version it lists installs as
+`git+https://github.com/ccclosed/dsh-selection-actions.git#<commit>`, so an install is always reproducible.
+
 ## How it works
 
 - `client.js` — the whole plugin (Web client half, `window.__ModuleLoader__` module):
