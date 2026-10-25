@@ -19,11 +19,15 @@ English | [Русский](#русский)
 
 ## Install
 
-The plugin is a bundle: the Host half is empty, everything lives in the Web client. Install it from this
-directory with the harness plugin manager (or `dsh plugin add <path>`):
+The plugin is a bundle: the Host half is empty, everything lives in the Web client. Install it with the
+harness plugin manager, from this checkout or straight from GitHub:
 
 ```
+# from a local checkout
 dsh plugin --profile <profile> add /path/to/dsh-selection-actions
+
+# from this repository
+dsh plugin --profile <profile> add https://github.com/ccclosed/dsh-selection-actions
 ```
 
 Then reload the Web GUI page. It is a per-profile installation and survives restarts.
