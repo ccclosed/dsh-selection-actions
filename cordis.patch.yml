@@ -1,0 +1,3 @@
+- insert:
+    - id: selection-actions
+      name: 'dsh-selection-actions'
