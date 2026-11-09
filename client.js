@@ -92,6 +92,7 @@ window.__ModuleLoader__.load({
       'padding:3px;border:1px solid var(--dsw-alias-border-l2);border-radius:10px;',
       'background:var(--dsw-alias-bg-layer-1);color:var(--dsw-alias-label-primary);',
       'font-size:13px;line-height:1.2;max-width:calc(100vw - 16px);pointer-events:auto;',
+      'user-select:none;-webkit-user-select:none;',
       'box-sizing:border-box;}',
       '.dsa-btn{font:inherit;font-size:13px;color:var(--dsw-alias-label-primary);background:transparent;',
       'border:0;border-radius:7px;padding:6px 10px;cursor:pointer;white-space:nowrap;}',
@@ -991,8 +992,29 @@ window.__ModuleLoader__.load({
           }, [hide]);
 
           React.useEffect(() => {
+            /**
+             * True while the primary pointer is down. Evaluating mid-drag is what
+             * puts the panel under the cursor: it renders 8px below the selection,
+             * its `pointer-events:auto` then takes over the ongoing drag, and the
+             * range ends up spanning the fixed overlay and the text — i.e. the
+             * whole conversation gets selected. Re-evaluating on every
+             * `selectionchange` also re-renders on every pixel, which is the
+             * flicker. So: stay hidden while dragging, evaluate once on release.
+             */
+            let dragging = false;
             function onSelectionChange() {
+              if (dragging) return;
               evaluate();
+            }
+            function onPointerUp() {
+              if (!dragging) return;
+              dragging = false;
+              evaluate();
+            }
+            function onPointerCancel() {
+              // Release outside the window never reaches us; drop the flag so the
+              // next selection is not ignored.
+              dragging = false;
             }
             function onScroll() {
               hide();
@@ -1021,16 +1043,23 @@ window.__ModuleLoader__.load({
               if (target !== null && typeof target.closest === 'function' && target.closest('[' + PANEL_ATTR + ']') !== null) {
                 return;
               }
+              dragging = true;
               hide();
             }
             document.addEventListener('selectionchange', onSelectionChange);
             document.addEventListener('pointerdown', onPointerDown, true);
+            document.addEventListener('pointerup', onPointerUp, true);
+            document.addEventListener('pointercancel', onPointerCancel, true);
+            window.addEventListener('blur', onPointerCancel);
             document.addEventListener('keydown', onKeyDown, true);
             window.addEventListener('scroll', onScroll, true);
             window.addEventListener('resize', onResize);
             return () => {
               document.removeEventListener('selectionchange', onSelectionChange);
               document.removeEventListener('pointerdown', onPointerDown, true);
+              document.removeEventListener('pointerup', onPointerUp, true);
+              document.removeEventListener('pointercancel', onPointerCancel, true);
+              window.removeEventListener('blur', onPointerCancel);
               document.removeEventListener('keydown', onKeyDown, true);
               window.removeEventListener('scroll', onScroll, true);
               window.removeEventListener('resize', onResize);
